@@ -28,3 +28,6 @@ def transactionUpdate(request):
 
 def signUp(request):
 	return render(request,"HomePage/signUp.html",{})
+
+def dashboard(request):
+	return render(request,"HomePage/dashboard.html",{})

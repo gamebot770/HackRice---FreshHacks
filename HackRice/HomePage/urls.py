@@ -12,4 +12,5 @@ urlpatterns = [
     path("transactionUpdate",views.transactionUpdate,name="transactionUpdate"),
 
     path("signUp",views.signUp,name="signUp"),
+    path("dashboard",views.dashboard,name="dashboard"),
 ]

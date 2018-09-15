@@ -5,36 +5,30 @@
 {% block content %}
 
 
+  <div class = “container”>
+            <div class=“dropdown”>
+                 <button class=“btn dropdown-toggle” type=“button” data-toggle=“dropdown”>{username}
+                 <span class=“caret”></span></button>
+                 <ul class=“dropdown-menu”>
+                   <li><a href=“#”>Dashboard</a></li>
+                   <li><a href=“#”>Sign Out</a></li>
+                 </ul>
+            </div>
+        </div>
 
 
+<!--
 
 <div class="col-md-10 text-right menu-1">
-   <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu" >
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-    </ul>
-  </div>
-</div> 
- <!--
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">{username}
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="HomePage/dashboard">Dashboard</a></li>
-      <li><a href="HomePage/about">Log Out</a></li>
-     
-    </ul>
-  </div>-->
-<!--
-							<ul>
-								<li class="active"><a href="{% url 'aboutPage'%}">{{username}}</a></li>
-
-							</ul>
-</div>-->
+   <li class="has-dropdown">
+                  <a href="work.html">Works</a>
+                  <ul class="dropdown">
+                    <li><a href="work-grid.html">Log Out</a></li>
+                    <li><a href="work-grid-without-text.html">Dashboard</a></li>
+                    <li><a href="work-grid.html">Home</a></li>
+                    <li><a href="work-grid-without-text.html">Category Selection</a></li>
+</div> -->
+ 
                            
 
 
