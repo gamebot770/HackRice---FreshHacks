@@ -5,4 +5,8 @@ urlpatterns = [
     path('', views.HomePage, name='HomePage'),
     path('about',views.aboutPage,name="aboutPage"),
     path('login',views.login,name="login"),
+    #path("dashboard",views.dashboard,name="dashboard"),
+    path("categorySelection",views.categorySelection,name="categorySelection"),
+
+    path("baseTemplate",views.baseTemplate,name="baseTemplate"),
 ]

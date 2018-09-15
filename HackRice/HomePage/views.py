@@ -8,6 +8,9 @@ import datetime
 def HomePage(request):
     return HttpResponse("<h1>ji</h1>")
 
+def baseTemplate(request):
+	return render(request,"HomePage/baseTemplate.html",{})
+
 def aboutPage(request):
     a=2
     b=4
@@ -16,3 +19,7 @@ def aboutPage(request):
 
 def login(request):
     return render(request, "HomePage/login.html", {})
+
+
+def categorySelection(request):
+	return render(request,"HomePage/categorySelection.html",{})
