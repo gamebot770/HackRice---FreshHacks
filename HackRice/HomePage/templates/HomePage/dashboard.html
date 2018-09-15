@@ -4,36 +4,42 @@
 
 {% block dashboard %}
 
+
 <script>
+	console.log("WAASSSUUP")
 
 
   queryString = window.location.search;
 	
 query = queryString.substring(1);
-
+console.log("query",query)
 query = decodeURIComponent(query);
 
 
 var split_query = query.split("&") ;
+console.log("split_query",split_query);
 
-var table = document.getElementById("the_table");
 for (i = 0; i < split_query.length; i++) {
+	
     small_list = []
+    all_var_and_vals = []
+    var_and_val = []
     small_list = split_query[i]
     small_list = small_list.split("=") ;
-    //document.write(small_list);
-    var row = table.insertRow(0); 
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1); 
-    cell1.innerHTML = small_list[0];
-    cell2.innerHTML = small_list[1];
-    if (small_list[0]=== "timestamp"){
-      var current_date = new Date ();
-      var current_time = current_date.getTime ();
-      cell2.innerHTML = current_date
+    console.log(small_list)
+
+    //all_var_and_vals.concat([small_list])
+    
 
 
-   }
+    document.write(small_list);
+    var_and_val[0] = small_list[0]
+    var_and_val[1] = small_list[1]
+    all_var_and_vals.push(var_and_val) 
+    var_and_val = []
+    console.log("all var and vals", all_var_and_vals)
+
+
     }
 
 
