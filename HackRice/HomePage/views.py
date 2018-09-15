@@ -12,4 +12,7 @@ def aboutPage(request):
     a=2
     b=4
     sum = a + b
-    return render(request,"HomePage/template-pages/index.html",{"sum":sum})
+    return render(request,"HomePage/home.html",{"sum":sum})
+
+def login(request):
+    return render(request, "HomePage/login.html", {})

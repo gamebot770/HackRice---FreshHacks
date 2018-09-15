@@ -1,9 +1,10 @@
 <!DOCTYPE HTML>
+{% load static %}
 <html>
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Login</title>
+	<title>Home</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
@@ -24,24 +25,24 @@
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400" rel="stylesheet">
 	
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href='{% static "css/animate.css" %}'>
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="{%static 'css/icomoon.css' %}">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="{%static 'css/bootstrap.css' %}">
 
 	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="{%static 'css/magnific-popup.css' %}">
 
 	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="{%static 'scss/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{%static 'css/owl.theme.default.min.css' %}">
 
 	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="{%static 'css/style.css' %}">
 
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -313,29 +314,27 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</div>-->
 	
 	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
+	<script src="{%static 'js/jquery.min.js' %}"></script>
 	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="{%static 'js/jquery.easing.1.3.js' %}"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="{%static 'js/bootstrap.min.js' %}"></script>
 	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="{%static 'js/jquery.waypoints.min.js' %}"></script>
 	<!-- Stellar Parallax -->
-	<script src="js/jquery.stellar.min.js"></script>
+	<script src="{%static 'js/jquery.stellar.min.js' %}"></script>
 	<!-- YTPlayer -->
-	<script src="js/jquery.mb.YTPlayer.min.js"></script>
+	<script src="{%static 'js/jquery.mb.YTPlayer.min.js' %}"></script>
 	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
+	<script src="{%static 'js/owl.carousel.min.js' %}"></script>
 	<!-- Magnific Popup -->
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/magnific-popup-options.js"></script>
+	<script src="{%static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{%static 'js/magnific-popup-options.js' %}"></script>
 	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="js/google_map.js"></script>
+	<script src="{%static 'js/jquery.countTo.js' %}"></script>
 	<!-- Main -->
-	<script src="js/main.js"></script>
+	<script src="{%static 'js/main.js' %}"></script>
+    
 
 	</body>
 </html>
