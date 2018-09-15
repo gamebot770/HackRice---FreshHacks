@@ -1,0 +1,73 @@
+
+{% extends "HomePage/baseTemplate.html" %}
+
+
+
+
+
+  {% block beneathHACK8 %}
+
+  <div class="col-md-4 text-left">
+    <h2>Create an Account</h2>
+  </div>
+
+
+
+  <div class="col-md-14 text-right">
+    <h2>Already Have an Account?</h2>
+	  <p><a href="{% url 'login' %}" class="btn btn-primary btn-lg btn-custom">Log in Here</a></p>
+  </div>
+
+
+
+
+  <form method="get" action="dashboard.html">
+    <div class="row form-group">
+		<div class="col-md-12">
+									<!-- <label for="email">Email</label> -->
+		  <input type="text" id="email" class="form-control" placeholder="Account Name" required>
+		</div>
+	</div>
+
+	<div class="row form-group">
+	  <div class="col-md-12">
+									<!-- <label for="subject">Subject</label> -->
+        <input type="password" id="subject" class="form-control" placeholder="Password" required>
+	  </div>
+
+	</div>
+    
+    <div class="row form-group">
+	  <div class="col-md-12">
+									<!-- <label for="subject">Subject</label> -->
+        <input type="password" id="confirm_password" class="form-control" placeholder="Confirm Password" required>
+	  </div>
+
+	</div>
+
+
+    <div class="row form-group">
+	  <div class="col-md-12">
+									<!-- <label for="subject">Subject</label> -->
+        <input type="text" id="phone" class="form-control" placeholder="Phone (xxxxxxxxxx)" required pattern="[0-9]{10}" title="must be in form xxxxxxxxxx" required    >
+	  </div>
+
+	</div>
+
+	 <div class="row form-group">
+	  <div class="col-md-12">
+									<!-- <label for="subject">Subject</label> -->
+        <input type="phone_carrier" id="phone" class="form-control" placeholder="Phone Carrier" required>
+	  </div>
+
+	</div>
+
+
+
+
+	<div class="form-group">
+	  <input type="submit" value="Submit" class="btn btn-primary">
+	</div>
+  </form>
+
+  {% endblock %}

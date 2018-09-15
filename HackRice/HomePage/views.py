@@ -20,6 +20,11 @@ def aboutPage(request):
 def login(request):
     return render(request, "HomePage/login.html", {})
 
-
 def categorySelection(request):
 	return render(request,"HomePage/categorySelection.html",{})
+
+def transactionUpdate(request):
+	return render(request,"HomePage/transactionUpdate.html",{})
+
+def signUp(request):
+	return render(request,"HomePage/signUp.html",{})

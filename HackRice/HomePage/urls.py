@@ -9,4 +9,7 @@ urlpatterns = [
     path("categorySelection",views.categorySelection,name="categorySelection"),
 
     path("baseTemplate",views.baseTemplate,name="baseTemplate"),
+    path("transactionUpdate",views.transactionUpdate,name="transactionUpdate"),
+
+    path("signUp",views.signUp,name="signUp"),
 ]
