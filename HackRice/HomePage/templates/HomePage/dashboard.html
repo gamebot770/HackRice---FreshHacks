@@ -1,3 +1,47 @@
 
 
 {% extends "HomePage/baseTemplate.html" %}
+
+{% block dashboard %}
+
+<script>
+
+
+  queryString = window.location.search;
+	
+query = queryString.substring(1);
+
+query = decodeURIComponent(query);
+
+
+var split_query = query.split("&") ;
+
+var table = document.getElementById("the_table");
+for (i = 0; i < split_query.length; i++) {
+    small_list = []
+    small_list = split_query[i]
+    small_list = small_list.split("=") ;
+    //document.write(small_list);
+    var row = table.insertRow(0); 
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1); 
+    cell1.innerHTML = small_list[0];
+    cell2.innerHTML = small_list[1];
+    if (small_list[0]=== "timestamp"){
+      var current_date = new Date ();
+      var current_time = current_date.getTime ();
+      cell2.innerHTML = current_date
+
+
+   }
+    }
+
+
+
+
+
+
+
+
+</script>	
+{% endblock %}

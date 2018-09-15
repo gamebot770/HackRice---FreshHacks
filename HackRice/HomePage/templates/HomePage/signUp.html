@@ -25,14 +25,14 @@
     <div class="row form-group">
 		<div class="col-md-12">
 									<!-- <label for="email">Email</label> -->
-		  <input type="text" id="email" class="form-control" placeholder="Account Name" required>
+		  <input type="text" id="email" name="id" class="form-control" placeholder="Account Name" required>
 		</div>
 	</div>
 
 	<div class="row form-group">
 	  <div class="col-md-12">
 									<!-- <label for="subject">Subject</label> -->
-        <input type="password" id="subject" class="form-control" placeholder="Password" required>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
 	  </div>
 
 	</div>
@@ -40,7 +40,7 @@
     <div class="row form-group">
 	  <div class="col-md-12">
 									<!-- <label for="subject">Subject</label> -->
-        <input type="password" id="confirm_password" class="form-control" placeholder="Confirm Password" required>
+        <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Confirm Password" required>
 	  </div>
 
 	</div>
@@ -49,7 +49,7 @@
     <div class="row form-group">
 	  <div class="col-md-12">
 									<!-- <label for="subject">Subject</label> -->
-        <input type="text" id="phone" class="form-control" placeholder="Phone (xxxxxxxxxx)" required pattern="[0-9]{10}" title="must be in form xxxxxxxxxx" required    >
+        <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone (xxxxxxxxxx)" required pattern="[0-9]{10}" title="must be in form xxxxxxxxxx" required    >
 	  </div>
 
 	</div>
@@ -57,15 +57,47 @@
 	 <div class="row form-group">
 	  <div class="col-md-12">
 									<!-- <label for="subject">Subject</label> -->
-        <input type="phone_carrier" id="phone" class="form-control" placeholder="Phone Carrier" required>
+        <input type="phone_carrier" id="phone" name="phone" class="form-control" placeholder="Phone Carrier" required>
 	  </div>
 
 	</div>
 
+   <h4> Please enter your Target Spending Amounts for the following categories per month. </h4>
+   
+   <div class="row form-group">
+	  <div class="col-md-12">
+									<!-- <label for="subject">Subject</label> -->
+       <h4>Food: <input "type="text" id="food_amount" name="food_amount" class="form-control" placeholder="00.00" pattern="^\d*(\.\d{2}$)?" required></h4>
+	  </div>
+  
+  <div class="row form-group">
+	  <div class="col-md-12">
+									<!-- <label for="subject">Subject</label> -->
+       <h4>Gas: <input type="text" id="gas_amount" name="gas_amount" class="form-control" placeholder="00.00" pattern="^\d*(\.\d{2}$)?" required></h4>
+	  </div>
+	
+	<div class="row form-group">
+	  <div class="col-md-12">
+									<!-- <label for="subject">Subject</label> -->
+       <h4>Clothes: <input type="text" id="clothes_amount" name="clothes_amount" class="form-control" placeholder="00.00" pattern="^\d*(\.\d{2}$)?" required></h4>
+	  </div>
+
+	<div class="row form-group">
+	  <div class="col-md-12">
+									<!-- <label for="subject">Subject</label> -->
+       <h4>Utilities: <input type="text" id="utilities_amount" name="utilities_amount" class="form-control" placeholder="00.00" pattern="^\d*(\.\d{2}$)?" required></h4>
+	  </div>
+
+	<div class="row form-group">
+	  <div class="col-md-12">
+									<!-- <label for="subject">Subject</label> -->
+       <h4>Miscellaneous: <input type="text" id="miscellaneous_amount" name="miscellaneous_amount" class="form-control" placeholder="00.00" pattern="^\d*(\.\d{2}$)?" required></h4>
+	  </div>
 
 
 
-	<div class="form-group">
+	<div class="form-group" style="text-align: center">
+
 	  <input type="submit" value="Submit" class="btn btn-primary">
 	</div>
   </form>
