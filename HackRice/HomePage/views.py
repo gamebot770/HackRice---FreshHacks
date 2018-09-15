@@ -5,6 +5,7 @@ import requests
 import json
 from django.shortcuts import redirect
 import datetime
+import random
 from .models import *
 # Create your views here.
 
@@ -17,6 +18,15 @@ def aboutPage(request):
     sum = a + b
 
     customers = getCustomers()
-    for customer in customers:
-        print(customer["_id"],getPurchases(str(customer["_id"])))
-    return render(request,"HomePage/example.html",{"sum":sum})
+    merchants = getMerchants()
+    for merchant in merchants:
+        print (merchant["name"])
+    #print (makePayment(customers[0]["_id"],merchants[0],"A Huge Successful Hackathon",400,"10-11-2018","pending"))
+    print (getPurchases(customers[0]["_id"]))
+    """for customer in customers:
+        print(customer["_id"],getPurchases(str(customer["_id"])))"""
+
+    return HttpResponse(random.choices(getCustomers()))
+
+def simulateSwipe(request):
+    pass
