@@ -13,5 +13,6 @@ urlpatterns = [
 
     path("signUp",views.signUp,name="signUpPage"),
     path("dashboard",views.dashboard,name="dashboard"),
+    path("swipeCard",views.swipeCard,name="swipeCard"),
     #path("viewAccounts",views.viewAccounts,name="viewAccounts"),
 ]

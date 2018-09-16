@@ -1,12 +1,13 @@
 from django.shortcuts import render,get_object_or_404
 from django.views.generic import ListView
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 import requests
 import json
 from django.shortcuts import redirect,reverse
 from .models import *
 import datetime
 from .models import *
+from django.contrib.auth.models import User
 # Create your views here.
 
 def HomePage(request):
@@ -49,6 +50,10 @@ def signUpCustomers(request):
 def swipeCard(request):
     customers = getCustomers()
     makePayment(customers[0]["_id"],getMerchants()[0]["_id"],"A bottle",17.90,str(datetime.date),"pending")
+    customer = User.objects.get(id=customers[0]["_id"])
+    send_text(customer.userprofile.phoneNum,customer.userprofile.carrier,request.META['HTTP_HOST'])
+
+    return HttpResponseRedirect(reverse('dashboard'))
 
 def viewAccounts(request):
 

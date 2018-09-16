@@ -27,8 +27,11 @@ def signUp(request):
         user.userprofile.carrier = carrier
         user.userprofile.save()
 
-
-        return HttpResponse()
+        if getCustomer(user.userprofile.id)!= -1:
+            return HttpResponseRedirect(reverse('dashboard'))
+        else:
+            #addCustomer(User)
+            return HttpResponseRedirect(reverse('dashboard'))
 
 def signIn(request):
     if request.POST:

@@ -22,15 +22,13 @@ class Category(models.Model):
 
 def updateCustomerData(user):
     customer = getCustomer(user.userprofile.id)
+    print(customer)
     if customer != -1:
         user.id = customer["_id"]
         user.first_name = customer["first_name"]
         user.last_name = customer["last_name"]
         user.userprofile.address = customer["address"]
         user.save()
-
-
-
 
 
 

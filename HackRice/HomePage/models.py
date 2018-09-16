@@ -63,15 +63,6 @@ def getCustomer(id):
         pass
     return customer
 
-def getCustomer(id):
-    url = "http://api.reimaginebanking.com/customers/{}?key=a88246e847558936dbafc257d51fea7b".format(id)
-    customer = requests.get(url).json()
-    try:
-        if customer["code"]=="404":
-            return -1
-    except:
-        pass
-    return customer
 
 def getCustomers():
     url = "http://api.reimaginebanking.com/customers?key=a88246e847558936dbafc257d51fea7b"
@@ -79,15 +70,6 @@ def getCustomers():
     customerDictionary = customers.json()
     return customerDictionary
 
-def getCustomer(id):
-    url = "http://api.reimaginebanking.com/customers/{}?key=a88246e847558936dbafc257d51fea7b".format(id)
-    customer = requests.get(url).json()
-    try:
-        if customer["code"]=="404":
-            return -1
-    except:
-        pass
-    return customer
 
 def getAccount(id):
     url = "http://api.reimaginebanking.com/accounts/{}?key=a88246e847558936dbafc257d51fea7b".format(id)
@@ -115,7 +97,6 @@ def getMerchants():
     url = "http://api.reimaginebanking.com/merchants?key=a88246e847558936dbafc257d51fea7b"
     merchants = requests.get(url)
     return merchants.json()
-
 
 def makePayment(customerID, merchant, description, amount, purchaseDate, status):
     paymentInfo = {
