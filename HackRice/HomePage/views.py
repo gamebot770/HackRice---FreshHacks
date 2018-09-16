@@ -54,9 +54,13 @@ def swipeCard(request):
     print(customers[0]["_id"])
     makePayment(customers[0]["_id"],getMerchants()[0],"A bottle",17.90,str(datetime.date),"pending")
     customer = User.objects.get(username=customers[0]["_id"])
-    customer.userprofile.carrier = "T-Mobile"
-    customer.userprofile.phoneNum = "17029374446"
-    send_text(customer.userprofile.phoneNum,customer.userprofile.carrier,request.META['HTTP_HOST'])
+
+    try:
+        send_text(customer.userprofile.phoneNum,customer.userprofile.carrier,request.META['HTTP_HOST'])
+    except:
+        customer.userprofile.carrier = "T-Mobile"
+        customer.userprofile.phoneNum = "17029374446"
+        send_text(customer.userprofile.phoneNum,customer.userprofile.carrier,request.META['HTTP_HOST'])
 
     return HttpResponseRedirect(reverse('dashboard'))
 
