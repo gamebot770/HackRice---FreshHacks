@@ -54,13 +54,13 @@ class Payment(models.Model):
 
 
 def getCustomers():
-    url = "http://api.reimaginebanking.com/accounts?key=a88246e847558936dbafc257d51fea7b"
+    url = "http://api.reimaginebanking.com/customers?key=a88246e847558936dbafc257d51fea7b"
     customers = requests.get(url)
     customerDictionary = customers.json()
     return customerDictionary
 
 def getCustomer(id):
-    url = "http://api.reimaginebanking.com/accounts/{}/customer?key=a88246e847558936dbafc257d51fea7b".format(id)
+    url = "http://api.reimaginebanking.com/customers/{}?key=a88246e847558936dbafc257d51fea7b".format(id)
     customer = requests.get(url).json()
     try:
         if customer["code"]=="404":

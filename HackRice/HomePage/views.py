@@ -37,3 +37,13 @@ def signUp(request):
 
 def dashboard(request):
     return render(request,"HomePage/dashboard.html",{})
+
+def signUpCustomers(request):
+    customers = getCustomers()
+    for customer in customers:
+        pass
+
+def swipeCard(request):
+    customers = getCustomers()
+    makePayment(customers[0]["_id"],getMerchants()[0]["_id"],"A bottle",17.90,str(datetime.date),"pending")
+
