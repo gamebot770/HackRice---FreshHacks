@@ -23,7 +23,7 @@ for (i = 0; i < split_query.length; i++) {
 	
     small_list = []
     all_var_and_vals = []
-    var_and_val = []
+    //var_and_val = []
     small_list = split_query[i]
     small_list = small_list.split("=") ;
     console.log(small_list)
@@ -33,8 +33,8 @@ for (i = 0; i < split_query.length; i++) {
 
 
     document.write(small_list);
-    var_and_val[0] = small_list[0]
-    var_and_val[1] = small_list[1]
+    //var_and_val[0] = small_list[0]
+    //var_and_val[1] = small_list[1]
     all_var_and_vals.push(var_and_val) 
     var_and_val = []
     console.log("all var and vals", all_var_and_vals)
