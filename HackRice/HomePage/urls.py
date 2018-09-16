@@ -13,5 +13,5 @@ urlpatterns = [
 
     path("signUp",views.signUp,name="signUpPage"),
     path("dashboard",views.dashboard,name="dashboard"),
-    path("viewAccounts",views.viewAccounts,name="viewAccounts"),
+    #path("viewAccounts",views.viewAccounts,name="viewAccounts"),
 ]
