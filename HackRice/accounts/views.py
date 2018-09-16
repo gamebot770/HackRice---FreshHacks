@@ -35,10 +35,12 @@ def signIn(request):
         temp.username = request.POST["username"]
         temp.password = request.POST["password"]
 
-        user = authenticate(username=request.POST["username"],password=request.POST["password"])
+        user = authenticate(request,username=request.POST["username"],password=request.POST["password"])
 
         if user is not None:
+            print(user)
             if user.is_active:
-                login(temp.username,temp.password)
+                login(request,user)
                 return HttpResponseRedirect(reverse("dashboard"))
+
         return HttpResponseRedirect(reverse("login"))
