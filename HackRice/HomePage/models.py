@@ -1,6 +1,9 @@
 from django.db import models
 import requests
 import json
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 
 # Create your models here.
