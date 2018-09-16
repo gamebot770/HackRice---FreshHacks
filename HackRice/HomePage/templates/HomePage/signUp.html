@@ -21,18 +21,29 @@
 
 
 
-  <form method="get" action="{% url 'dashboard' %}">
+  <form method="POST" action="{% url 'signUp' %}">
+      
+      
+    {% csrf_token %}
     <div class="row form-group">
 		<div class="col-md-12">
 									<!-- <label for="email">Email</label> -->
+<<<<<<< HEAD
 		  <input type="text" id="email" name="id" class="form-control" placeholder="Account Name" required>
+=======
+		  <input type="text" id="email" name='email' class="form-control" placeholder="Account Name" required>
+>>>>>>> Accounts
 		</div>
 	</div>
 
 	<div class="row form-group">
 	  <div class="col-md-12">
 									<!-- <label for="subject">Subject</label> -->
+<<<<<<< HEAD
         <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+=======
+        <input type="password" id="subject" name='subject' class="form-control" placeholder="Password" required>
+>>>>>>> Accounts
 	  </div>
 
 	</div>
@@ -40,7 +51,11 @@
     <div class="row form-group">
 	  <div class="col-md-12">
 									<!-- <label for="subject">Subject</label> -->
+<<<<<<< HEAD
         <input type="password" id="confirm_password" name="confirm_password" class="form-control" placeholder="Confirm Password" required>
+=======
+        <input type="password" id="confirm_password" name='confirm_password' class="form-control" placeholder="Confirm Password" required>
+>>>>>>> Accounts
 	  </div>
 
 	</div>
@@ -49,7 +64,11 @@
     <div class="row form-group">
 	  <div class="col-md-12">
 									<!-- <label for="subject">Subject</label> -->
+<<<<<<< HEAD
         <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone (xxxxxxxxxx)" required pattern="[0-9]{10}" title="must be in form xxxxxxxxxx" required    >
+=======
+        <input type="text" id="phone" class="form-control" name="phoneNumber" placeholder="Phone (xxxxxxxxxx)" required pattern="[0-9]{10}" title="must be in form xxxxxxxxxx" required    >
+>>>>>>> Accounts
 	  </div>
 
 	</div>
@@ -57,11 +76,16 @@
 	 <div class="row form-group">
 	  <div class="col-md-12">
 									<!-- <label for="subject">Subject</label> -->
+<<<<<<< HEAD
         <input type="phone_carrier" id="phone" name="phone" class="form-control" placeholder="Phone Carrier" required>
+=======
+        <input type="phone_carrier" id="phone" name="carrier" class="form-control" placeholder="Phone Carrier" required>
+>>>>>>> Accounts
 	  </div>
 
 	</div>
 
+<<<<<<< HEAD
    <h4> Please enter your Target Spending Amounts for the following categories per month. </h4>
    
    <div class="row form-group">
@@ -98,6 +122,9 @@
 
 	<div class="form-group" style="text-align: center">
 
+=======
+	<div class="form-group">
+>>>>>>> Accounts
 	  <input type="submit" value="Submit" class="btn btn-primary">
 	</div>
   </form>
