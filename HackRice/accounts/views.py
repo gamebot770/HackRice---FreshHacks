@@ -18,7 +18,7 @@ def signUp(request):
         carrier = request.POST["carrier"]
 
         user = User()
-        user.username = user.email
+        user.username = request.POST["id"]
         user.set_password(password)
         user.email = email
         user.save()
@@ -30,11 +30,12 @@ def signUp(request):
         if getCustomer(user.userprofile.id)!= -1:
             return HttpResponseRedirect(reverse('dashboard'))
         else:
-            #addCustomer(User)
+            addCustomer(User)
             return HttpResponseRedirect(reverse('dashboard'))
 
 def signIn(request):
-    if request.POST:
+    if request.method == "POST":
+
         temp = User()
         temp.username = request.POST["username"]
         temp.password = request.POST["password"]
@@ -46,6 +47,12 @@ def signIn(request):
             if user.is_active:
                 login(request,user)
                 updateCustomerData(user)
-                return HttpResponseRedirect(reverse("dashboard"))
+                print(getCustomer(request.user.userprofile.id))
+                if getCustomer(request.user.userprofile.id) != -1:
+                    return HttpResponseRedirect(reverse('dashboard'))
+                else:
+                    print("DONE!")
+                    addCustomer(User)
+                    return HttpResponseRedirect(reverse('dashboard'))
 
         return HttpResponseRedirect(reverse("login"))

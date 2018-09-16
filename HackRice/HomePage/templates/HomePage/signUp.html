@@ -29,10 +29,19 @@
 		<div class="col-md-12">
 									<!-- <label for="email">Email</label> -->
 
-		  <input type="text" id="email" name="id" class="form-control" placeholder="Account Name" required>
+		  <input type="text" id="email" name="id" class="form-control" placeholder="Account Name" required minlength="24" maxlength="24">
 		</div>
 	</div>
+      
+    <div class="row form-group">
+		<div class="col-md-12">
+									<!-- <label for="email">Email</label> -->
 
+		  <input type="text" id="email" name="email" class="form-control" placeholder="Email" required>
+            
+		</div>
+	</div>  
+      
 	<div class="row form-group">
 	  <div class="col-md-12">
 									<!-- <label for="subject">Subject</label> -->
@@ -57,7 +66,7 @@
 	  <div class="col-md-12">
 									<!-- <label for="subject">Subject</label> -->
 
-        <input type="text" id="phone" name="phone" class="form-control" placeholder="Phone (xxxxxxxxxx)" required pattern="[0-9]{10}" title="must be in form xxxxxxxxxx" required>
+        <input type="text" id="phone" name="phoneNumber" class="form-control" placeholder="Phone (xxxxxxxxxx)" required pattern="[0-9]{10}" title="must be in form xxxxxxxxxx" required>
 	  </div>
 
 	</div>
@@ -66,7 +75,7 @@
 	  <div class="col-md-12">
 									<!-- <label for="subject">Subject</label> -->
 
-        <input type="phone_carrier" id="phone" name="phone" class="form-control" placeholder="Phone Carrier" required>
+        <input type="phone_carrier" id="phone" name="carrier" class="form-control" placeholder="Phone Carrier" required>
 	  </div>
 
 	</div>

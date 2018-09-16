@@ -57,7 +57,7 @@ def getCustomer(id):
     url = "http://api.reimaginebanking.com/customers/{}?key=a88246e847558936dbafc257d51fea7b".format(id)
     customer = requests.get(url).json()
     try:
-        if customer["code"]=="404":
+        if customer["code"]==404:
             return -1
     except:
         pass
@@ -81,6 +81,37 @@ def getAccounts(id):
     accounts = requests.get(url).json()
     return accounts
 
+def makePayment(customerID, merchant, description, amount, purchaseDate, status):
+    print (merchant)
+    paymentInfo = {
+        "merchant_id": merchant["_id"],
+        "medium": "balance",
+        "purchase_date": purchaseDate,
+        "amount": amount,
+        "status": status,
+        "description": description
+    }
+    url = "http://api.reimaginebanking.com/accounts/{}/purchases?key=a88246e847558936dbafc257d51fea7b".format(
+        customerID)
+
+    return requests.post(url, json.dumps(paymentInfo), headers={'content-type': 'application/json'})
+
+
+def addCustomer(user):
+    customer = {
+  "first_name": str(user.first_name),
+  "last_name": str(user.last_name),
+  "address": {
+    "street_number": "string",
+    "street_name": "string",
+    "city": "string",
+    "state": "string",
+    "zip": "string"
+  }
+}
+
+    url = "http://api.reimaginebanking.com/customers?key=a88246e847558936dbafc257d51fea7b"
+    return requests.post(url, json.dumps(customer), headers={"content-type": "application/json; charset=utf-8"})
 
 def getPurchases(id):
     url = "http://api.reimaginebanking.com/accounts/{}/purchases?key=a88246e847558936dbafc257d51fea7b".format(id)
@@ -98,24 +129,11 @@ def getMerchants():
     merchants = requests.get(url)
     return merchants.json()
 
-def makePayment(customerID, merchant, description, amount, purchaseDate, status):
-    paymentInfo = {
-        "merchant_id": merchant["_id"],
-        "medium": "balance",
-        "purchase_date": purchaseDate,
-        "amount": amount,
-        "status": status,
-        "description": description
-    }
-    url = "http://api.reimaginebanking.com/accounts/{}/purchases?key=a88246e847558936dbafc257d51fea7b".format(
-        customerID)
-
-    return requests.post(url, json.dumps(paymentInfo), headers={'content-type': 'application/json'})
-
 
 def getPayments(accountID):
     url = "http://api.reimaginebanking.com/purchases/{}?key=a88246e847558936dbafc257d51fea7b".format(accountID)
     return requests.get(url).json()
+
 
 
 def send_text(number, carrier, url):

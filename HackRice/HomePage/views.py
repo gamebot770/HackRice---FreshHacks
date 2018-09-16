@@ -49,12 +49,37 @@ def signUpCustomers(request):
 
 def swipeCard(request):
     customers = getCustomers()
-    makePayment(customers[0]["_id"],getMerchants()[0]["_id"],"A bottle",17.90,str(datetime.date),"pending")
-    customer = User.objects.get(id=customers[0]["_id"])
+    for customer in customers:
+        makeCustomer(customer)
+    print(customers[0]["_id"])
+    makePayment(customers[0]["_id"],getMerchants()[0],"A bottle",17.90,str(datetime.date),"pending")
+    customer = User.objects.get(username=customers[0]["_id"])
+    customer.userprofile.carrier = "T-Mobile"
+    customer.userprofile.phoneNum = "17029374446"
     send_text(customer.userprofile.phoneNum,customer.userprofile.carrier,request.META['HTTP_HOST'])
 
     return HttpResponseRedirect(reverse('dashboard'))
 
+def makeCustomer(customer):
+    user = User()
+    {
+        "first_name": "string",
+        "last_name": "string",
+        "address": {
+            "street_number": "string",
+            "street_name": "string",
+            "city": "string",
+            "state": "string",
+            "zip": "string"
+        }
+    }
+    user.first_name = customer["first_name"]
+    user.last_name = customer["last_name"]
+    user.username = customer["_id"]
+    try:
+        user.save()
+    except:
+        pass
 def viewAccounts(request):
 
     account = getAccount(request.user.userprofile.id)

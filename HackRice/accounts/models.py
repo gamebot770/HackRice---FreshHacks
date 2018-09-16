@@ -10,7 +10,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User,on_delete=models.CASCADE)
     phoneNum = models.CharField(max_length=11)
     carrier = models.CharField(max_length=24)
-    id = models.CharField(max_length=24,primary_key=True)
+    accountID = models.CharField(max_length=24,default="23")
     address = models.CharField(max_length=4000)
 
 
@@ -21,10 +21,10 @@ class Category(models.Model):
     allocation = models.FloatField()
 
 def updateCustomerData(user):
-    customer = getCustomer(user.userprofile.id)
+    customer = getCustomer(user.userprofile.accountID)
     print(customer)
     if customer != -1:
-        user.id = customer["_id"]
+        user.accountID = customer["_id"]
         user.first_name = customer["first_name"]
         user.last_name = customer["last_name"]
         user.userprofile.address = customer["address"]
