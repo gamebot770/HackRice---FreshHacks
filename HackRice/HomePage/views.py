@@ -47,3 +47,17 @@ def swipeCard(request):
     customers = getCustomers()
     makePayment(customers[0]["_id"],getMerchants()[0]["_id"],"A bottle",17.90,str(datetime.date),"pending")
 
+def viewAccounts(request):
+
+    account = getAccount(request.user.userprofile.id)
+    accId = account.id
+    accType = account.type
+    accNickname = account.nickname
+    accRewards = account.rewards
+    accBalance = account.balance
+    accNumber = account.account_number
+    customerId = account.customer_id
+
+    return render(request,"HomePage/viewAccounts.html",{"accId":accId, "accType":accType, "accNickname":accNickname,
+                    "accRewards":accRewards, "accBalance":accBalance, "accNumber":accNumber, "customerId":customerId})
+
