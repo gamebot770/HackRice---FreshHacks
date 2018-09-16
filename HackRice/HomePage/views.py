@@ -58,8 +58,8 @@ def swipeCard(request):
     try:
         send_text(customer.userprofile.phoneNum,customer.userprofile.carrier,request.META['HTTP_HOST'])
     except:
-        customer.userprofile.carrier = "T-Mobile"
-        customer.userprofile.phoneNum = "17029374446"
+        customer.userprofile.carrier = "Google Fi"
+        customer.userprofile.phoneNum = "3092793967"
         send_text(customer.userprofile.phoneNum,customer.userprofile.carrier,request.META['HTTP_HOST'])
 
     return HttpResponseRedirect(reverse('dashboard'))

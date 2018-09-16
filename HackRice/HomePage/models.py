@@ -141,7 +141,7 @@ def send_text(number, carrier, url):
                 "Virgin Mobile":"vmobl.com","Tracfone":"mmst5.tracfone.com","Metro PCS":"mymetropcs.com",
                 "Boost Mobile":"sms.myboostmobile.com","Cricket":"sms.cricketwireless.net","Republic Wireless":"text.republicwireless.com",
                 "Google Fi":"msg.fi.google.com","U.S. Cellular":"email.uscc.net","Ting":"message.ting.com",
-                "Consumer Cellular":"mailmymobile.net","C-Spire":"cspire1.com","PagePlus":"ytext.com"}
+                "Consumer Cellular":"mailmymobile.net","C-Spire":"cspire1.com","PagePlus":"ytext.com","t-mobile":"tmomail.net"}
 
     message = MIMEMultipart()
     message['From'] = "expenditureender@gmail.com"
