@@ -1,7 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from django.views.generic import ListView
 from django.http import HttpResponse
-from django.shortcuts import redirect
+from django.shortcuts import redirect,reverse
 import datetime
 # Create your views here.
 
@@ -9,7 +9,7 @@ def HomePage(request):
     return HttpResponse("<h1>ji</h1>")
 
 def baseTemplate(request):
-	return render(request,"HomePage/baseTemplate.html",{})
+    return render(request,"HomePage/baseTemplate.html",{})
 
 def aboutPage(request):
     a=2
@@ -21,13 +21,14 @@ def login(request):
     return render(request, "HomePage/login.html", {})
 
 def categorySelection(request):
-	return render(request,"HomePage/categorySelection.html",{})
+    return render(request,"HomePage/categorySelection.html",{})
 
 def transactionUpdate(request):
-	return render(request,"HomePage/transactionUpdate.html",{})
+    return render(request,"HomePage/transactionUpdate.html",{})
 
 def signUp(request):
-	return render(request,"HomePage/signUp.html",{})
+    print(reverse('signUp'))
+    return render(request,"HomePage/signUp.html",{})
 
 def dashboard(request):
-	return render(request,"HomePage/dashboard.html",{})
+    return render(request,"HomePage/dashboard.html",{})
