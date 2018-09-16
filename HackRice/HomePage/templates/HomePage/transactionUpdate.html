@@ -1,0 +1,47 @@
+
+
+{% extends "HomePage/baseTemplate.html" %}
+
+{% block beneathHACK8 %}
+  
+<form method="get" action="dashboard.html">
+ <div class="animate-box">
+                <h2 class="text-center">Select a category to specify amount spent</h2>
+               
+                
+  </div>
+
+
+<form>
+ <div >
+    
+     <div class="radio">
+      <label><input type="checkbox" name="optradio" checked>Food</label>
+     </div>
+     <div class="radio">
+      <label><input type="checkbox" name="optradio">Gas</label>
+     </div>
+    <div class="radio">
+      <label><input type="checkbox" name="optradio">Clothes</label>
+    </div>
+    <div class="radio">
+      <label><input type="checkbox" name="optradio">Utilities</label>
+    </div>
+    <div class="radio">
+      <label><input type="checkbox" name="optradio">Miscellaneous</label>
+    </div>
+   </div>
+
+   <div class="form-group">
+    <input type="submit" value="Submit Expenses" class="btn btn-primary">
+  </div>
+
+</form>  
+
+
+
+
+
+
+{% endblock %}
+
