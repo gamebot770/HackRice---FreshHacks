@@ -4,12 +4,17 @@ from django.http import HttpResponse
 import requests
 import json
 from django.shortcuts import redirect,reverse
+from .models import *
 import datetime
 from .models import *
 # Create your views here.
 
 def HomePage(request):
-    return HttpResponse("<h1>ji</h1>")
+
+    customers = getCustomers()
+    customer = getCustomer(customers[1]["_id"])
+    account = getAccounts(customer["_id"])
+    return HttpResponse(account)
 
 def baseTemplate(request):
     return render(request,"HomePage/baseTemplate.html",{})
@@ -35,3 +40,27 @@ def signUp(request):
 
 def dashboard(request):
     return render(request,"HomePage/dashboard.html",{})
+
+def signUpCustomers(request):
+    customers = getCustomers()
+    for customer in customers:
+        pass
+
+def swipeCard(request):
+    customers = getCustomers()
+    makePayment(customers[0]["_id"],getMerchants()[0]["_id"],"A bottle",17.90,str(datetime.date),"pending")
+
+def viewAccounts(request):
+
+    account = getAccount(request.user.userprofile.id)
+    accId = account.id
+    accType = account.type
+    accNickname = account.nickname
+    accRewards = account.rewards
+    accBalance = account.balance
+    accNumber = account.account_number
+    customerId = account.customer_id
+
+    return render(request,"HomePage/viewAccounts.html",{"accId":accId, "accType":accType, "accNickname":accNickname,
+                    "accRewards":accRewards, "accBalance":accBalance, "accNumber":accNumber, "customerId":customerId})
+

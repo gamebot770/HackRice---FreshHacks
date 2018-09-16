@@ -3,7 +3,8 @@ from django.views.generic import ListView
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login
-from accounts import models
+from accounts.models import *
+from HomePage.models import *
 from django.shortcuts import redirect,HttpResponseRedirect,reverse
 
 # Create your views here.
@@ -35,10 +36,13 @@ def signIn(request):
         temp.username = request.POST["username"]
         temp.password = request.POST["password"]
 
-        user = authenticate(username=request.POST["username"],password=request.POST["password"])
+        user = authenticate(request,username=request.POST["username"],password=request.POST["password"])
 
         if user is not None:
+            print(user)
             if user.is_active:
-                login(temp.username,temp.password)
+                login(request,user)
+                updateCustomerData(user)
                 return HttpResponseRedirect(reverse("dashboard"))
+
         return HttpResponseRedirect(reverse("login"))
