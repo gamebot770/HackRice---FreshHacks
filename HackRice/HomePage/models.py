@@ -38,8 +38,6 @@ class Account(models.Model):
                 newPayments.append(payment)
                 self.payments.add(payment)
 
-
-
 class Payment(models.Model):
     account = models.ManyToManyField(Account)
     id = models.CharField(max_length=24,primary_key=True)
@@ -51,6 +49,16 @@ class Payment(models.Model):
     status = models.CharField(max_length=25)
     medium = models.FloatField()
     description = models.CharField(max_length=400)
+
+def getCustomer(id):
+    url = "http://api.reimaginebanking.com/customers/{}?key=a88246e847558936dbafc257d51fea7b".format(id)
+    customer = requests.get(url).json()
+    try:
+        if customer["code"]=="404":
+            return -1
+    except:
+        pass
+    return customer
 
 def getCustomer(id):
     url = "http://api.reimaginebanking.com/customers/{}?key=a88246e847558936dbafc257d51fea7b".format(id)
