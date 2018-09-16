@@ -30,5 +30,5 @@ def signUp(request):
     print(reverse('signUp'))
     return render(request,"HomePage/signUp.html",{})
 
-def dashboard(request):
-    return render(request,"HomePage/dashboard.html",{})
+def dashboardReal(request):
+    return render(request,"HomePage/dashboardReal.html",{})
